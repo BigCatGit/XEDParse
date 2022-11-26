@@ -4,6 +4,10 @@
 #include "Translator.h"
 #include "ParseTest.h"
 
+#include <stdio.h>
+
+extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
+
 void XEDParseSetMode(bool X64, xed_state_t* State)
 {
     if(X64)
